@@ -22,9 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/auth', authRouter);
+
 
 var mongoDB = config.dbURL;
 mongoose.connect(mongoDB);
@@ -35,6 +33,53 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
   console.log("Connected to the DB");
 });
+
+var passport = require('passport');
+
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
+var User = require('./models/User');
+
+passport.use(new GoogleStrategy({
+  clientID: config.googleClientID,
+  clientSecret: config.googleClientSecret,
+  callbackURL: "http://localhost:3000/auth/login/callback"
+},
+function(accessToken, refreshToken, profile, done) {
+     console.log("here!!!!!!!.......")
+     User.findOrCreate(profile.id, function (err, user) {
+       if (user){
+         console.log("in here in here in here");
+          done(err, user);
+       }
+       else{
+        let newUser = new User({
+              username: profile.displayName,
+              google_id: profile.id,
+              rooms: []
+          });
+          User.saveUser(function (err, user){
+            done(err, user);
+          }, newUser);
+       }
+     });
+}
+));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
