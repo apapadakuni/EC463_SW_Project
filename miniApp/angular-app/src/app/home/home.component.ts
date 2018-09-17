@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   user: User
   newRoom: string;
   selectedRoom: string;
-  displayData: boolean;
 
   // Info on making http requests via a service: https://angular.io/guide/http
 
@@ -43,8 +42,15 @@ export class HomeComponent implements OnInit {
   public dispRoomData(roomName){
     // Variable passed to the child component indicating the name of the room to display data for. 
     this.selectedRoom = roomName;
-    // Flag indicating whether to display data about the room. 
-    this.displayData = true;
+
+    var modal = document.getElementById('myModal');
+    var span = document.getElementsByClassName("close")[0];
+    modal.style.display = "block";
+  }
+
+  public closeModel(){
+    var modal = document.getElementById('myModal');
+    modal.style.display = "none";
   }
 
 }

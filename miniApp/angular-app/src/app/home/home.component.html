@@ -27,7 +27,10 @@
       </form>
 </div>
 
-<div *ngIf="displayData">
-  <!-- // Info on Child-Parent Interactions: https://angular.io/guide/component-interaction -->
-  <app-data [selectedRoom]="selectedRoom"></app-data>
+<!-- modal html from: https://www.w3schools.com/howto/howto_css_modals.asp -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span (click)="closeModel()" class="close">&times;</span>
+        <app-data [selectedRoom]="selectedRoom"></app-data>
+    </div>
 </div>
