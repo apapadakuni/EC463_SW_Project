@@ -12,9 +12,9 @@
 
 <div *ngIf="user!=null">
   <div *ngIf="user.rooms != null">
-      <li *ngFor="let room of user.rooms">
+      <div *ngFor="let room of user.rooms">
           <button (click)="dispRoomData(room)">{{room}}</button>
-      </li>
+      </div>
   </div>
 
 </div>

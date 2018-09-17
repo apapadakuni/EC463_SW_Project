@@ -5,3 +5,8 @@
 <div *ngIf="selectedRoom != null">
   Your Data For: {{selectedRoom}}
 </div>
+
+<!-- Canvas element which contains the chart to be built -->
+<div *ngIf="chart">
+    <canvas #canvas id="canvas">{{ chart }}</canvas>
+</div>
