@@ -33,3 +33,9 @@ module.exports.findOrCreate = function(id, callback){
     const query = { google_id: id}
     User.findOne(query, callback);
 }
+
+//function to update the user with the given username
+module.exports.updateUser = function(callback, id, updatedUser, options){
+    const query = {google_id: id};
+    User.findOneAndUpdate(query, updatedUser, options, callback)
+}

@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+const cors = require("cors");
 var config = require('./config');
 
 var indexRouter = require('./routes/index');
@@ -11,17 +12,6 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 
 var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
 
 
 var mongoDB = config.dbURL;
@@ -33,6 +23,10 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
   console.log("Connected to the DB");
 });
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 var passport = require('passport');
 
@@ -46,10 +40,9 @@ passport.use(new GoogleStrategy({
   callbackURL: "http://localhost:3000/auth/login/callback"
 },
 function(accessToken, refreshToken, profile, done) {
-     console.log("here!!!!!!!.......")
+
      User.findOrCreate(profile.id, function (err, user) {
        if (user){
-         console.log("in here in here in here");
           done(err, user);
        }
        else{
@@ -76,6 +69,15 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
   done(null, user);
 });
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
+app.options('*', cors());
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -1,3 +1,32 @@
-<p>
-  You have logged in!!! Welcome {{username}}
+
+<p *ngIf="id != null">
+  You have logged in!!! Welcome {{id}}
 </p>
+
+<br><br>
+<p *ngIf="user != null">
+
+  Username: {{user.username}}<br>
+  ID: {{user.google_id}}<br>
+</p>
+
+<div *ngIf="user!=null">
+  <div *ngIf="user.rooms != null">
+      <li *ngFor="let room of user.rooms">
+          <button (click)="dispRoomData(room)">{{room}}</button>
+      </li>
+  </div>
+
+</div>
+
+<div>
+  Enter a New Room:
+    <form #f="ngForm" (ngSubmit)="submitRoom(f)" novalidate>
+        <input name="newRoom" ngModel required #newRoom="ngModel">
+        <button>Submit</button>
+      </form>
+</div>
+
+<div *ngIf="displayData">
+  <app-data [selectedRoom]="selectedRoom"></app-data>
+</div>
