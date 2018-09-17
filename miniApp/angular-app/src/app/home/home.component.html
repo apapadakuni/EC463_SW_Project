@@ -1,0 +1,46 @@
+<br>
+<h1 class="text-center" *ngIf="user != null">
+  Welcome to Your House Portal {{user.username}}<br>
+</h1>
+<br>
+<br>
+
+<h3 class="text-center">View Data for Your Registered Rooms</h3>
+<br>
+
+<div *ngIf="user!=null">
+  <div class ="text-center" *ngIf="user.rooms != null">
+      <div *ngFor="let room of user.rooms">
+          <button (click)="dispRoomData(room)">{{room}}</button>
+          <br><br>
+      </div>
+  </div>
+</div>
+
+<br><br>
+
+<h3 class="text-center">Register a New Room</h3>
+<br>
+<div class = "text-center">
+    <!-- Angular Forms: https://angular.io/api/forms/NgForm -->
+    <form #f="ngForm" (ngSubmit)="submitRoom(f)" novalidate>
+        <label>Room Name:</label> &nbsp;<input name="newRoom" ngModel required #newRoom="ngModel">
+        <button>Submit</button>
+      </form>
+</div>
+
+<br><br><br>
+
+<div class = "text-center">
+    <a class="btn btn-primary btn-lg" href="http://localhost:3000/auth/logout" role="button">Logout</a>
+</div>
+
+<br><br><br>
+
+<!-- modal html from: https://www.w3schools.com/howto/howto_css_modals.asp -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span (click)="closeModel()" class="close">&times;</span>
+        <app-data [selectedRoom]="selectedRoom"></app-data>
+    </div>
+</div>
