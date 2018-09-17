@@ -8,14 +8,14 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 import { DataComponent } from './data/data.component';
+import { MainBodyComponent } from './main-body/main-body.component';
 
 // Routes to be controlled by the router. Either the home page for the user, or the website home page. 
 // Info on routing and configuring the router: https://angular.io/guide/router
 const appRoutes: Routes = [
   { path: 'home/:id', component: HomeComponent },
-  { path: '',      component: LoginComponent }
+  { path: '',      component: MainBodyComponent }
 ];
 
 
@@ -23,8 +23,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
-    DataComponent
+    DataComponent,
+    MainBodyComponent
   ],
   imports: [
     BrowserModule,

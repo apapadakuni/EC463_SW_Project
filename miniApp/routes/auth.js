@@ -60,4 +60,11 @@ router.post("/updateUser/", function(req, res, next) {
     }, id, updatedUser, {});
   });
 
+  // Route necessary to clear the session and logout the user. Redirects to the homepage.
+  // Page on logout: http://www.passportjs.org/docs/logout/
+  router.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('http://localhost:4200');
+  });
+
 module.exports = router;

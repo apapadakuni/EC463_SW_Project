@@ -23,6 +23,7 @@ export class DataComponent implements OnInit {
   chart = [];
 
   // Wait for the selectedRoom to be loaded from the parent.
+  // Resource on OnChanges: https://angular.io/api/core/OnChanges
   ngOnChanges(changes:  SimpleChange) {
     if (changes['selectedRoom']) {
       this.chart = [];

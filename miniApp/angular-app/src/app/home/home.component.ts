@@ -34,7 +34,9 @@ export class HomeComponent implements OnInit {
   // Function to process the form. Extracts the name of the room and adds it to the user's array of room names. 
   // Also resaves the user with the new room in the database. 
   public submitRoom(f: NgForm) {
+    this.newRoom = "";
     this.user.rooms.push(f.value.newRoom);
+    f.value.newRoom = "";
     this.userService.updateUser(this.user).subscribe((user: User) => console.log(user.username));
   }
 
