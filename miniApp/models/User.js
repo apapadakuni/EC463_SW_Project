@@ -2,6 +2,8 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
+// Info on mongoose schemas and associated functions: https://mongoosejs.com/docs/guide.html
+
 //Schema for the users of the site. 
 var UserSchema = new Schema({
     // display name of the user, obtained from the google profile.

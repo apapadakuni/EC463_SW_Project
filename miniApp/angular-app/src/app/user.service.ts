@@ -16,6 +16,8 @@ export class UserService {
     })
   };
 
+  // Info on making http requests and type checking the responses: https://angular.io/guide/http
+
   // Function to request the user data from the backend db. 
   getUser(id) {
     return this.http.get<User>("http://localhost:3000/auth/getUser/" + id);

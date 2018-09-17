@@ -13,7 +13,8 @@ var authRouter = require('./routes/auth');
 
 var app = express();
 
-// Setup the mongo db database. Need to connect to mLab where the data is hosted. 
+// Setup the mongo db database. Need to connect to mLab where the data is hosted.
+// Info on mongoose/mongo db/connecting to mLab: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose 
 var mongoDB = config.dbURL;
 mongoose.connect(mongoDB);
 
@@ -27,6 +28,8 @@ db.once('open', function(){
 // view engine setup. This is not used.
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+// Info on passport configuration: http://www.passportjs.org/docs/google/
 
 // Imports the necessary passport modules. 
 var passport = require('passport');
@@ -73,6 +76,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Necessary to work with user data returned from google. 
+// SO Article: https://stackoverflow.com/questions/27637609/understanding-passport-serialize-deserialize
 passport.serializeUser(function(user, done) {
   done(null, user);
 });

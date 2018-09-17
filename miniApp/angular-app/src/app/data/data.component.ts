@@ -10,6 +10,7 @@ export class DataComponent implements OnInit {
   constructor() { }
 
   // Get the room name from the parent component. 
+  // Info on Child-Parent Interactions: https://angular.io/guide/component-interaction
   @Input() selectedRoom: string;
 
   ngOnInit() {

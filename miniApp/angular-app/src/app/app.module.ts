@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { DataComponent } from './data/data.component';
 
 // Routes to be controlled by the router. Either the home page for the user, or the website home page. 
+// Info on routing and configuring the router: https://angular.io/guide/router
 const appRoutes: Routes = [
   { path: 'home/:id', component: HomeComponent },
   { path: '',      component: LoginComponent }

@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
   selectedRoom: string;
   displayData: boolean;
 
+  // Info on making http requests via a service: https://angular.io/guide/http
+
   ngOnInit() {
     // Get the google ID from the URL and then look up the user from the db using the id. 
     this.sub = this.route.params.subscribe(params => {

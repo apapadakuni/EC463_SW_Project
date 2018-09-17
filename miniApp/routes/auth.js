@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var User = require('../models/User');]
+var User = require('../models/User');
+
+// Info on passport route configuration: http://www.passportjs.org/docs/google/
 
 // Initial call to get the user authenticated. Indicates that we want the google profile data
 // upon successful login.
@@ -47,6 +49,7 @@ router.post("/updateUser/", function(req, res, next) {
     var id = req.body.google_id;
     let updatedUser = req.body;
 
+    // Call schema function to update the user in the db. Return the user via json to the front-end. 
     User.updateUser(function(err, user){
       if(err){
         throw err;
