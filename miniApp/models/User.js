@@ -2,20 +2,19 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-//Schema for Users of the website
-//unique identifier for the User is the username
+//Schema for the users of the site. 
 var UserSchema = new Schema({
-    //username of the user, taken from the OAuth Login - example: "mwcote97"
+    // display name of the user, obtained from the google profile.
     username:{
         type: String, 
         required: true
     },
-    //the age of the user - example: 21
+    // unique ID of the user, obtained from the google profile. 
     google_id:{
         type: String,
         required: true
     },
-    //the street address of the user - example: "700 Commonwealth Ave"
+    // A list of the rooms for which the user has sensor data. 
     rooms:{
         type: [String],
         required: true
@@ -24,17 +23,18 @@ var UserSchema = new Schema({
 
 var User = module.exports = mongoose.model('Users', UserSchema);
 
-//function to save the user object
+// Function to save the user object.
 module.exports.saveUser = function(callback, newUser){
     newUser.save(callback);
 }
 
+// Function to find a user. 
 module.exports.findOrCreate = function(id, callback){
     const query = { google_id: id}
     User.findOne(query, callback);
 }
 
-//function to update the user with the given username
+// Function to find a user based on it's google ID and update the user record. 
 module.exports.updateUser = function(callback, id, updatedUser, options){
     const query = {google_id: id};
     User.findOneAndUpdate(query, updatedUser, options, callback)

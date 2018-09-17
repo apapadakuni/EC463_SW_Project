@@ -12,21 +12,17 @@ export class UserService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
+      'Content-Type':  'application/json'
     })
   };
 
+  // Function to request the user data from the backend db. 
   getUser(id) {
     return this.http.get<User>("http://localhost:3000/auth/getUser/" + id);
   }
 
+  // Function to send the updated user to the backend db to overwrite the outdated user record. 
   updateUser(updatedUser: User){
     return this.http.post<User>("http://localhost:3000/auth/updateUser", updatedUser, this.httpOptions)
   }
 }
-
-/// Write service to get User
-/// Write User class
-/// Make call to user service
-/// display the rooms

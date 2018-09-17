@@ -9,6 +9,7 @@ export class DataComponent implements OnInit {
 
   constructor() { }
 
+  // Get the room name from the parent component. 
   @Input() selectedRoom: string;
 
   ngOnInit() {
