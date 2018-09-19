@@ -46,6 +46,18 @@ EC463: Senior Design Project 1
   <li>View the chart containing the temperature and humidity data</li>
 </ul>
 
+<h3> Design Description </h3>
+
+<h4> Overview </h4>
+
+<p> This repo contains a web application for viewing sensor data from rooms in a house. The application consists of an angular front end which the user interacts with in the browser. This web app communicates with a backend node.js server. This server makes calls to fetch data from a mongodb database, to authenticate users via google, and to fetch sensor data from a separate server hosted on Amazon EC2. </p>
+  
+<h4> Front-End: Angular Web App </h4>
+
+<p>For the front-end application, the angular framework is used. HTML, CSS, and TS files are used to define several components, which are displayed when navigated to using basic routing. There are components for the data display, for the user portal, and for the home page. To display the sensor data, the Chart.js framework was used to construct the line graphs. This front-end web app makes all calls to the backend Node.js server to perform any sort of processing or data storage/fetching. </p>
+
+<h4> Back-End: Node.js Server </h4>
+
 <h3> File Descriptions </h3>
 
 <h4> AWS EC2 Cloud Files </h4>
