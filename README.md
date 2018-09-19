@@ -8,7 +8,8 @@ json string.
 
 connection.py: Testing python script which examines the communication to the server and
 if there is an error with the retrieving data with the server, it sends a text message
-to my cell phone number using free twilio API.
+to my cell phone number using free twilio API. 
 
-test.bat: Batch file that is run on another AWS EC2 Windows Instance. It runs 
-"connection.py" every 20 minutes, until there is error.
+test.bat: Batch file that is run on another AWS EC2 Windows Instance continuously. It 
+runs "connection.py" every 20 minutes, until there is error. 
+Assumption: test.bat assumes that connection.py and test.bat are in the same directory.
