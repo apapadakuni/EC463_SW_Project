@@ -15,12 +15,14 @@ EC463: Senior Design Project 1
 <h5>Step 3: Start the Backend Server</h5>
 <ul>
   <li>Navigate to EC463_SW_Project\miniApp in the terminal</li>
+  <li>Run the command "npm install" to install all the necessary packages</li>
   <li>Run the command "npm start"</li>
 </ul>
 <h5>Step 4: Start the Front-End Web App</h5>
 <ul>
   <li>Open a new terminal while keeping the previous terminal running</li>
   <li>Navigate to EC463_SW_Project\miniApp\angular-app</li>
+  <li>Run the command "npm install" to install all the necessary packages</li>
   <li>Run the commmand "ng serve"</li>
 </ul>
 <h5>Step 5: Open the Application in a Browser</h5>
@@ -46,10 +48,12 @@ EC463: Senior Design Project 1
 
 <h3> File Descriptions </h3>
 
+<h4> AWS EC2 Cloud Files </h4>
+
 <strong>server.py</strong>: This python script acts as a server. It is run on an AWS EC2 Windows Instance
 continuously. The script opens up a port to allow communiction through it. If anything 
 except "disconnect" is sent to the server, it spits back a dictionairy in the form of a
-json string. 
+json string. This data represents the temperature and humidity data that would be captured by a sensor over a 24 hour period.
 
 <strong>connection.py</strong>: Testing python script which examines the communication to the server and
 if there is an error with the retrieving data with the server, it sends a text message
@@ -58,3 +62,31 @@ to my cell phone number using free twilio API.
 <strong>test.bat</strong>: Batch file that is run on another AWS EC2 Windows Instance continuously. It 
 runs "connection.py" every 20 minutes, until there is error. 
 Assumption: test.bat assumes that connection.py and test.bat are in the same directory.
+
+<h4> Node.js Backend Server File </h4>
+
+<strong>miniApp/app.js</strong> This js file contains the startup and configuration code for the server. This configuration includes creating a basic Express.js server, connecting to an external mongodb database hosted on mLab, and setting up the Google Authentication strategy via Passport.js. 
+
+<strong>miniApp/routes/*</strong> Folder containing the js code for the different routes. Each file describes a router which handles certain requests to the backend server. For each route, a function is specified which shall be run when the route is requested. 
+
+<strong>miniApp/models/User.js</strong> This js file contains the Mongoose.js schema describing the User collection in the mongoDB database. This collection contains data about the user such as the rooms they have registered with "sensors". This schema describes all of the field names and data types in a single record in the User collection. It also defines specific functions used to query the database and insert/update data in the database. 
+
+<h4> Angular Frontend Web App </h4>
+
+<strong>miniApp/angular-app/src/app/data/*</strong> TS, HTML, and CSS files for the component which displays the sensor data in the chart. 
+
+<strong>miniApp/angular-app/src/app/home/*</strong> TS, HTML, and CSS files for the component which displays the user portal upon login. This component lists the user's rooms and allows for rooms to be registered. 
+
+<strong>miniApp/angular-app/src/app/main-body/*</strong> TS, HTML, and CSS files for the component which displays the initial home page for the web app and allows the user to login. 
+
+<strong>miniApp/angular-app/src/app/app.component.*</strong> TS, HTML, and CSS files for the component which acts as the parent for all other components. 
+
+<strong>miniApp/angular-app/src/app/app.module.ts</strong> TS file used to setup the router and setup the components, services, and packages. 
+
+<strong>miniApp/angular-app/src/app/data.service.ts</strong> TS file containing the service for fetching sensor data. Defines a function to be called when the sensor data needs to be fetched from the backend server using HTTP. 
+
+<strong>miniApp/angular-app/src/app/user.service.ts</strong> TS file containing the service for fetching user data. Defines functions to be called when the user data needs to be fetched from or updated on the backend server using HTTP.
+
+<strong>miniApp/angular-app/src/app/User.ts</strong> TS file containing a class definition for a User. Follows same structure as the backend mongoose schema. 
+
+<strong>miniApp/angular-app/src/app/SensorData.ts</strong> TS file containing a class definition for a json object with sensor data.
