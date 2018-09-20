@@ -54,7 +54,7 @@ EC463: Senior Design Project 1
   
 <h4> Front-End: Angular Web App </h4>
 
-<p>For the front-end application, the angular framework is used. HTML, CSS, and TS files are used to define several components, which are displayed when navigated to using basic routing. There are components for the data display, for the user portal, and for the home page. To display the sensor data, the Chart.js framework was used to construct the line graphs. This front-end web app makes all calls to the backend Node.js server to perform any sort of processing or data storage/fetching. </p>
+<p>For the front-end application, the angular framework is used. HTML, CSS, and TS files are used to define several components, which are displayed when navigated to using basic routing. There are components for the data display, for the user portal, and for the home page. To display the sensor data, the Chart.js framework was used to construct the line graphs. This front-end web app makes all calls to the backend Node.js server to perform any sort of processing or data storage/fetching.</p>
 
 <h4> Back-End: Node.js Server </h4>
 
@@ -62,11 +62,11 @@ EC463: Senior Design Project 1
 
 <h4> Data Storage: MongoDB Database </h4>
 
-<p>For permanent data storage, a mongoDB database has been created and hosted on mLab. This database stores User documents. These documents contain the username, google ID, and list of rooms registered for a user.</p>
+<p>For permanent data storage, a mongoDB database has been created and hosted on mLab. This database stores User documents. These documents contain the username, google ID, and list of rooms registered for a user. A MongoDB NoSQL database was used since the setup was less complex and there was minimal data that needed to be stored. Thus, using SQL in order to manage complex relationships between tables was not necessary. </p>
 
 <h4> Authentication: Google OAuth2 </h4>
 
-<p>In order to login to the system, the user must supply their google credentials. Using passport, the node server communicates with google to authenticate the user and fetch the relevant google profile data. This authentication method utilizes OAuth2 technology.</p>
+<p>In order to login to the system, the user must supply their google credentials. Using passport, the node server communicates with google to authenticate the user and fetch the relevant google profile data. This authentication method utilizes OAuth2 technology. A third party login was used in order to avoid the development overhead of creating a new custom authentication system.</p>
 
 <h4> Sensor Data: Amazon EC2 Instance Server </h4>
 
@@ -116,3 +116,9 @@ Assumption: test.bat assumes that connection.py and test.bat are in the same dir
 <strong>miniApp/angular-app/src/app/User.ts</strong> TS file containing a class definition for a User. Follows same structure as the backend mongoose schema. 
 
 <strong>miniApp/angular-app/src/app/SensorData.ts</strong> TS file containing a class definition for a json object with sensor data.
+
+<h3> Project Contributions </h4>
+
+<strong>Matthew Cote</strong> Created front-end web app, configured authentication system, and setup MongoDB database. 
+
+<strong>Andreas Boyle Papadakis</strong>
