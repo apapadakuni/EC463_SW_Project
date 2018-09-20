@@ -68,10 +68,16 @@ EC463: Senior Design Project 1
 
 <p>In order to login to the system, the user must supply their google credentials. Using passport, the node server communicates with google to authenticate the user and fetch the relevant google profile data. This authentication method utilizes OAuth2 technology. A third party login was used in order to avoid the development overhead of creating a new custom authentication system.</p>
 
-<h4> Sensor Data: Amazon EC2 Instance Server </h4>
+<h4> Sensor Data: 1st Amazon EC2 Instance Server </h4>
 
-<p>Insert description here.</p>
+<p>In order to simulate a Temperature and Humidity sensor, we create a json string in the form of a dictionary of random numbers. There is a script running continuously on an EC2 that, if it receives a request, it will send back that json string. The server will listen to at most 1 client at a time. The script uses the python <i>sockets</i> module to open and listen to port number that Node.js server will connect to.</p>
+  
+<h4> Testing: 2nd Amazon EC2 Instance Server </h4>
+
+<p>A 2nd server is required to test the data simulation server. This runs the python script every 20 minutes and checks if correct data has been received. If there is an error in the connection, or an error in the data received, it will use the python <i>twilio</i> module to send a text message immediately to the developer and alert them of the error.</p>
+
  <br>
+ 
 <h3> File Descriptions </h3>
 
 <h4> AWS EC2 Cloud Files </h4>
