@@ -116,7 +116,7 @@ Assumption: test.bat assumes that connection.py and test.bat are in the same dir
 <strong>miniApp/angular-app/src/app/User.ts</strong> TS file containing a class definition for a User. Follows same structure as the backend mongoose schema. 
 
 <strong>miniApp/angular-app/src/app/SensorData.ts</strong> TS file containing a class definition for a json object with sensor data.
-<br>
+<br><br>
 <h3> Project Contributions </h4>
 
 <strong>Matthew Cote</strong> Created front-end web app, configured authentication system, and setup MongoDB database. 
