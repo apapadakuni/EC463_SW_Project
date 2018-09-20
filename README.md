@@ -45,7 +45,7 @@ EC463: Senior Design Project 1
   <li>Click on any of the buttons with the room names</li>
   <li>View the chart containing the temperature and humidity data</li>
 </ul>
-
+<br>
 <h3> Design Description </h3>
 
 <h4> Overview </h4>
@@ -71,7 +71,7 @@ EC463: Senior Design Project 1
 <h4> Sensor Data: Amazon EC2 Instance Server </h4>
 
 <p>Insert description here.</p>
-
+ <br>
 <h3> File Descriptions </h3>
 
 <h4> AWS EC2 Cloud Files </h4>
@@ -116,7 +116,7 @@ Assumption: test.bat assumes that connection.py and test.bat are in the same dir
 <strong>miniApp/angular-app/src/app/User.ts</strong> TS file containing a class definition for a User. Follows same structure as the backend mongoose schema. 
 
 <strong>miniApp/angular-app/src/app/SensorData.ts</strong> TS file containing a class definition for a json object with sensor data.
-
+<br>
 <h3> Project Contributions </h4>
 
 <strong>Matthew Cote</strong> Created front-end web app, configured authentication system, and setup MongoDB database. 
