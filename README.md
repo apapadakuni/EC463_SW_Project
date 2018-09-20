@@ -58,6 +58,20 @@ EC463: Senior Design Project 1
 
 <h4> Back-End: Node.js Server </h4>
 
+<p>For the back-end server, the node.js framework is used. This server acts as a gateway, as it communicates with all of the other pieces in the system and routes the information backend to the front-end web app. This server communicates with the mongodb database hosted in mLab in order to fetch and save data. This server communicates with google to authenticate users and fetch user data. This server also communicates with the Amazon EC2 instance's server to fetch sensor data. </p>
+
+<h4> Data Storage: MongoDB Database </h4>
+
+<p>For permanent data storage, a mongoDB database has been created and hosted on mLab. This database stores User documents. These documents contain the username, google ID, and list of rooms registered for a user.</p>
+
+<h4> Authentication: Google OAuth2 </h4>
+
+<p>In order to login to the system, the user must supply their google credentials. Using passport, the node server communicates with google to authenticate the user and fetch the relevant google profile data. This authentication method utilizes OAuth2 technology.</p>
+
+<h4> Sensor Data: Amazon EC2 Instance Server </h4>
+
+<p>Insert description here.</p>
+
 <h3> File Descriptions </h3>
 
 <h4> AWS EC2 Cloud Files </h4>
