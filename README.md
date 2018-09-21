@@ -139,19 +139,19 @@ Assumption: test.bat assumes that connection.py and test.bat are in the same dir
 </ul>
 <h4> Without already existing gmail address in picked browser: (For this to happen, I suggest opening an Icognito Mode Window.)</h4>
 <ul>
-  1.	<li> Go to “localhost:4200”.</li>
-  2.<li>Click <i>Login</i>.</li>
-3.<li>Enter your @bu.edu address.
-4.<li>BU’s security will pop up. Enter your BU username and Kerberos password.
-5.<li>Enter “Bathroom” in the EditField under <i>Register a New Room</i> and hit Return.
-6.<li>Enter “Bedroom” in EditField under <i>Register a New Room</i> and hit Return. 
-7.<li>Close window and open a new one. 
-8.<li>Repeat steps 1-4. 
-9.<li>Click on new button <i>Bathroom</i>.
-10.<li>Check each point on pop up Graph for existing values.
-11.<li>Click on the <i>X</i> at the top left corner of the Graph.
-12.<li>Click on new button <i>Bedroom</i>.
-13.<li>Check each point on pop up Graph for existing values.
+  <li> Go to “localhost:4200”.</li>
+  <li>Click <i>Login</i>.</li>
+  <li>Enter your @bu.edu address.</li>
+  <li>BU’s security will pop up. Enter your BU username and Kerberos password.</li>
+  <li>Enter “Bathroom” in the EditField under <i>Register a New Room</i> and hit Return.</li>
+  <li>Enter “Bedroom” in EditField under <i>Register a New Room</i> and hit Return. </li>
+  <li>Close window and open a new one. </li>
+  <li>Repeat steps 1-4. </li>
+  <li>Click on new button <i>Bathroom</i>.</li>
+  <li>Check each point on pop up Graph for existing values.</li>
+  <li>Click on the <i>X</i> at the top left corner of the Graph.</li>
+  <li>Click on new button <i>Bedroom</i>.</li>
+  <li>Check each point on pop up Graph for existing values.</li>
 </ul>
 <h3> Project Contributions </h4>
 
