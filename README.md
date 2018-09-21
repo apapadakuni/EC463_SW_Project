@@ -159,4 +159,3 @@ Assumption: test.bat assumes that connection.py and test.bat are in the same dir
 
 <strong>Andreas Boyle Papadakis</strong> Created data-simulation server and python script, constructed testing server and programs, and wrote manual test cases.
 
-![Software Architecture](Software Architecture.png)
