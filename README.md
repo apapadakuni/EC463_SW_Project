@@ -153,12 +153,15 @@ Assumption: test.bat assumes that connection.py and test.bat are in the same dir
   <li>Click on new button <i>Bedroom</i>.</li>
   <li>Check each point on pop up Graph for existing values.</li>
 </ul>
+
+<h3> Software Architecture </h3>
+
+![Software Architecture](https://user-images.githubusercontent.com/31832559/45859452-67a8dd80-bd30-11e8-8729-947e3298e5b6.png)
+
+
+
 <h3> Project Contributions </h4>
 
 <strong>Matthew Cote</strong> Created front-end web app, configured authentication system, and setup MongoDB database. 
 
 <strong>Andreas Boyle Papadakis</strong> Created data-simulation server and python script, constructed testing server and programs, and wrote manual test cases.
-
-
-![Software Architecture](https://user-images.githubusercontent.com/31832559/45859452-67a8dd80-bd30-11e8-8729-947e3298e5b6.png)
-    
