@@ -123,6 +123,34 @@ Assumption: test.bat assumes that connection.py and test.bat are in the same dir
 
 <strong>miniApp/angular-app/src/app/SensorData.ts</strong> TS file containing a class definition for a json object with sensor data.
 <br><br>
+<h3> Manual Testing </h3>
+<h4> With already existing gmail address in picked browser: <h4>
+1.	Go to “localhost:4200”.
+2.	Click <i>Login</i>
+3.	Pick already existing gmail address (preferably not your BU account yet.)
+4.	Enter “Kitchen” in the EditField under <i>Register a New Room</i> and hit Return.
+5.	Click on new button <i>Kitchen</i>.
+6.	Check each point on pop up Graph for existing values.
+7.	Click on the <i>X</i> at the top left corner of the Graph.
+8.	Enter “Living Room” in the EditField under <i>Register a New Room</i> and hit Return. 
+9.	Click on new button <i>Living Room</i>.
+10.	Check each point on pop up Graph for existing values.
+
+<h4> Without already existing gmail address in picked browser: (For this to happen, I suggest opening an Icognito Mode Window.)</h4>
+1.	Go to “localhost:4200”.
+2.	Click <i>Login</i>.
+3.	Enter your @bu.edu address.
+4.	BU’s security will pop up. Enter your BU username and Kerberos password.
+5.	Enter “Bathroom” in the EditField under <i>Register a New Room</i> and hit Return.
+6.	Enter “Bedroom” in EditField under <i>Register a New Room</i> and hit Return. 
+7.	Close window and open a new one. 
+8.	Repeat steps 1-4. 
+9.	Click on new button <i>Bathroom</i>.
+10.	Check each point on pop up Graph for existing values.
+11.	Click on the <i>X</i> at the top left corner of the Graph.
+12.	Click on new button <i>Bedroom</i>.
+13.	Check each point on pop up Graph for existing values.
+
 <h3> Project Contributions </h4>
 
 <strong>Matthew Cote</strong> Created front-end web app, configured authentication system, and setup MongoDB database. 
