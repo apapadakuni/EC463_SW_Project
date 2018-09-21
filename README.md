@@ -154,13 +154,13 @@ Assumption: test.bat assumes that connection.py and test.bat are in the same dir
   <li>Check each point on pop up Graph for existing values.</li>
 </ul>
 
-
+<p> <br> </br> <p>
 
 <h3> Software Architecture </h3>
 
 
-
-![Software Architecture](https://user-images.githubusercontent.com/31832559/45859452-67a8dd80-bd30-11e8-8729-947e3298e5b6.png)
+<p> <br> </br> <p>
+  ![Software Architecture](https://user-images.githubusercontent.com/31832559/45859452-67a8dd80-bd30-11e8-8729-947e3298e5b6.png)
 
 
 
